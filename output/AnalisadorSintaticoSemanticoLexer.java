@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g 2020-06-11 04:42:04
+// $ANTLR 3.5.1 D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g 2020-06-11 04:48:22
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -8,24 +8,23 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 	public static final int EOF=-1;
+	public static final int T__15=15;
 	public static final int T__16=16;
 	public static final int T__17=17;
 	public static final int T__18=18;
 	public static final int T__19=19;
 	public static final int T__20=20;
-	public static final int T__21=21;
 	public static final int ASSIGNMENT_OP=4;
-	public static final int COMMENT=5;
-	public static final int CONST=6;
-	public static final int DO=7;
-	public static final int ELSE=8;
-	public static final int IF=9;
-	public static final int RELATIONAL_OP=10;
-	public static final int SEMICOLON=11;
-	public static final int THEN=12;
-	public static final int VAR=13;
-	public static final int WHILE=14;
-	public static final int WS=15;
+	public static final int CONST=5;
+	public static final int DO=6;
+	public static final int ELSE=7;
+	public static final int IF=8;
+	public static final int RELATIONAL_OP=9;
+	public static final int SEMICOLON=10;
+	public static final int THEN=11;
+	public static final int VAR=12;
+	public static final int WHILE=13;
+	public static final int WS=14;
 
 	// delegates
 	// delegators
@@ -42,15 +41,35 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 	}
 	@Override public String getGrammarFileName() { return "D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g"; }
 
-	// $ANTLR start "T__16"
-	public final void mT__16() throws RecognitionException {
+	// $ANTLR start "T__15"
+	public final void mT__15() throws RecognitionException {
 		try {
-			int _type = T__16;
+			int _type = T__15;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:7:7: ( '(' )
 			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:7:9: '('
 			{
 			match('('); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__15"
+
+	// $ANTLR start "T__16"
+	public final void mT__16() throws RecognitionException {
+		try {
+			int _type = T__16;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:8:7: ( ')' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:8:9: ')'
+			{
+			match(')'); 
 			}
 
 			state.type = _type;
@@ -67,10 +86,10 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = T__17;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:8:7: ( ')' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:8:9: ')'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:9:7: ( '*' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:9:9: '*'
 			{
-			match(')'); 
+			match('*'); 
 			}
 
 			state.type = _type;
@@ -87,10 +106,10 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = T__18;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:9:7: ( '*' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:9:9: '*'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:10:7: ( '+' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:10:9: '+'
 			{
-			match('*'); 
+			match('+'); 
 			}
 
 			state.type = _type;
@@ -107,10 +126,10 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = T__19;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:10:7: ( '+' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:10:9: '+'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:11:7: ( '-' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:11:9: '-'
 			{
-			match('+'); 
+			match('-'); 
 			}
 
 			state.type = _type;
@@ -127,26 +146,6 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = T__20;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:11:7: ( '-' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:11:9: '-'
-			{
-			match('-'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__20"
-
-	// $ANTLR start "T__21"
-	public final void mT__21() throws RecognitionException {
-		try {
-			int _type = T__21;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:12:7: ( '/' )
 			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:12:9: '/'
 			{
@@ -160,15 +159,15 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "T__21"
+	// $ANTLR end "T__20"
 
 	// $ANTLR start "IF"
 	public final void mIF() throws RecognitionException {
 		try {
 			int _type = IF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:180:4: ( 'if' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:180:6: 'if'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:142:4: ( 'if' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:142:6: 'if'
 			{
 			match("if"); 
 
@@ -188,8 +187,8 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = THEN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:183:7: ( 'then' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:183:9: 'then'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:145:7: ( 'then' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:145:9: 'then'
 			{
 			match("then"); 
 
@@ -209,8 +208,8 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = ELSE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:186:6: ( 'else' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:186:8: 'else'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:148:6: ( 'else' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:148:8: 'else'
 			{
 			match("else"); 
 
@@ -230,8 +229,8 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = WHILE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:189:7: ( 'while' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:189:9: 'while'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:151:7: ( 'while' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:151:9: 'while'
 			{
 			match("while"); 
 
@@ -251,8 +250,8 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = DO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:192:4: ( 'do' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:192:6: 'do'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:154:4: ( 'do' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:154:6: 'do'
 			{
 			match("do"); 
 
@@ -272,7 +271,7 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = RELATIONAL_OP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:196:2: ( '=' | '<>' | '<' | '>' | '<=' | '>=' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:158:2: ( '=' | '<>' | '<' | '>' | '<=' | '>=' )
 			int alt1=6;
 			switch ( input.LA(1) ) {
 			case '=':
@@ -318,39 +317,39 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 			}
 			switch (alt1) {
 				case 1 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:196:4: '='
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:158:4: '='
 					{
 					match('='); 
 					}
 					break;
 				case 2 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:197:4: '<>'
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:159:4: '<>'
 					{
 					match("<>"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:198:4: '<'
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:160:4: '<'
 					{
 					match('<'); 
 					}
 					break;
 				case 4 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:199:4: '>'
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:161:4: '>'
 					{
 					match('>'); 
 					}
 					break;
 				case 5 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:200:4: '<='
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:162:4: '<='
 					{
 					match("<="); 
 
 					}
 					break;
 				case 6 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:201:4: '>='
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:163:4: '>='
 					{
 					match(">="); 
 
@@ -372,8 +371,8 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = ASSIGNMENT_OP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:205:2: ( ':=' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:205:4: ':='
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:167:2: ( ':=' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:167:4: ':='
 			{
 			match(":="); 
 
@@ -393,8 +392,8 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = SEMICOLON;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:209:2: ( ';' )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:209:4: ';'
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:171:2: ( ';' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:171:4: ';'
 			{
 			match(';'); 
 			}
@@ -413,10 +412,10 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = CONST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:212:8: ( ( '0' .. '9' )+ )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:212:10: ( '0' .. '9' )+
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:174:8: ( ( '0' .. '9' )+ )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:174:10: ( '0' .. '9' )+
 			{
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:212:10: ( '0' .. '9' )+
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:174:10: ( '0' .. '9' )+
 			int cnt2=0;
 			loop2:
 			while (true) {
@@ -465,10 +464,10 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = VAR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:219:7: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:219:9: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:177:7: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:177:9: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			{
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:219:9: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:177:9: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			int cnt3=0;
 			loop3:
 			while (true) {
@@ -517,8 +516,8 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:222:6: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:222:8: ( ' ' | '\\t' | '\\r' | '\\n' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:180:6: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:180:8: ( ' ' | '\\t' | '\\r' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -540,351 +539,198 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 	}
 	// $ANTLR end "WS"
 
-	// $ANTLR start "COMMENT"
-	public final void mCOMMENT() throws RecognitionException {
-		try {
-			int _type = COMMENT;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:230:6: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
-			int alt7=2;
-			int LA7_0 = input.LA(1);
-			if ( (LA7_0=='/') ) {
-				int LA7_1 = input.LA(2);
-				if ( (LA7_1=='/') ) {
-					alt7=1;
-				}
-				else if ( (LA7_1=='*') ) {
-					alt7=2;
-				}
-
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 7, 1, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
-				}
-
-			}
-
-			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 7, 0, input);
-				throw nvae;
-			}
-
-			switch (alt7) {
-				case 1 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:230:10: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
-					{
-					match("//"); 
-
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:230:15: (~ ( '\\n' | '\\r' ) )*
-					loop4:
-					while (true) {
-						int alt4=2;
-						int LA4_0 = input.LA(1);
-						if ( ((LA4_0 >= '\u0000' && LA4_0 <= '\t')||(LA4_0 >= '\u000B' && LA4_0 <= '\f')||(LA4_0 >= '\u000E' && LA4_0 <= '\uFFFF')) ) {
-							alt4=1;
-						}
-
-						switch (alt4) {
-						case 1 :
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:
-							{
-							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
-								input.consume();
-							}
-							else {
-								MismatchedSetException mse = new MismatchedSetException(null,input);
-								recover(mse);
-								throw mse;
-							}
-							}
-							break;
-
-						default :
-							break loop4;
-						}
-					}
-
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:230:29: ( '\\r' )?
-					int alt5=2;
-					int LA5_0 = input.LA(1);
-					if ( (LA5_0=='\r') ) {
-						alt5=1;
-					}
-					switch (alt5) {
-						case 1 :
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:230:29: '\\r'
-							{
-							match('\r'); 
-							}
-							break;
-
-					}
-
-					match('\n'); 
-					_channel=HIDDEN;
-					}
-					break;
-				case 2 :
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:231:10: '/*' ( options {greedy=false; } : . )* '*/'
-					{
-					match("/*"); 
-
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:231:15: ( options {greedy=false; } : . )*
-					loop6:
-					while (true) {
-						int alt6=2;
-						int LA6_0 = input.LA(1);
-						if ( (LA6_0=='*') ) {
-							int LA6_1 = input.LA(2);
-							if ( (LA6_1=='/') ) {
-								alt6=2;
-							}
-							else if ( ((LA6_1 >= '\u0000' && LA6_1 <= '.')||(LA6_1 >= '0' && LA6_1 <= '\uFFFF')) ) {
-								alt6=1;
-							}
-
-						}
-						else if ( ((LA6_0 >= '\u0000' && LA6_0 <= ')')||(LA6_0 >= '+' && LA6_0 <= '\uFFFF')) ) {
-							alt6=1;
-						}
-
-						switch (alt6) {
-						case 1 :
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:231:43: .
-							{
-							matchAny(); 
-							}
-							break;
-
-						default :
-							break loop6;
-						}
-					}
-
-					match("*/"); 
-
-					_channel=HIDDEN;
-					}
-					break;
-
-			}
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "COMMENT"
-
 	@Override
 	public void mTokens() throws RecognitionException {
-		// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | IF | THEN | ELSE | WHILE | DO | RELATIONAL_OP | ASSIGNMENT_OP | SEMICOLON | CONST | VAR | WS | COMMENT )
-		int alt8=18;
+		// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | IF | THEN | ELSE | WHILE | DO | RELATIONAL_OP | ASSIGNMENT_OP | SEMICOLON | CONST | VAR | WS )
+		int alt4=17;
 		switch ( input.LA(1) ) {
 		case '(':
 			{
-			alt8=1;
+			alt4=1;
 			}
 			break;
 		case ')':
 			{
-			alt8=2;
+			alt4=2;
 			}
 			break;
 		case '*':
 			{
-			alt8=3;
+			alt4=3;
 			}
 			break;
 		case '+':
 			{
-			alt8=4;
+			alt4=4;
 			}
 			break;
 		case '-':
 			{
-			alt8=5;
+			alt4=5;
 			}
 			break;
 		case '/':
 			{
-			int LA8_6 = input.LA(2);
-			if ( (LA8_6=='*'||LA8_6=='/') ) {
-				alt8=18;
-			}
-
-			else {
-				alt8=6;
-			}
-
+			alt4=6;
 			}
 			break;
 		case 'i':
 			{
-			int LA8_7 = input.LA(2);
-			if ( (LA8_7=='f') ) {
-				int LA8_20 = input.LA(3);
-				if ( ((LA8_20 >= 'A' && LA8_20 <= 'Z')||(LA8_20 >= 'a' && LA8_20 <= 'z')) ) {
-					alt8=16;
+			int LA4_7 = input.LA(2);
+			if ( (LA4_7=='f') ) {
+				int LA4_18 = input.LA(3);
+				if ( ((LA4_18 >= 'A' && LA4_18 <= 'Z')||(LA4_18 >= 'a' && LA4_18 <= 'z')) ) {
+					alt4=16;
 				}
 
 				else {
-					alt8=7;
+					alt4=7;
 				}
 
 			}
 
 			else {
-				alt8=16;
+				alt4=16;
 			}
 
 			}
 			break;
 		case 't':
 			{
-			int LA8_8 = input.LA(2);
-			if ( (LA8_8=='h') ) {
-				int LA8_21 = input.LA(3);
-				if ( (LA8_21=='e') ) {
-					int LA8_26 = input.LA(4);
-					if ( (LA8_26=='n') ) {
-						int LA8_30 = input.LA(5);
-						if ( ((LA8_30 >= 'A' && LA8_30 <= 'Z')||(LA8_30 >= 'a' && LA8_30 <= 'z')) ) {
-							alt8=16;
+			int LA4_8 = input.LA(2);
+			if ( (LA4_8=='h') ) {
+				int LA4_19 = input.LA(3);
+				if ( (LA4_19=='e') ) {
+					int LA4_24 = input.LA(4);
+					if ( (LA4_24=='n') ) {
+						int LA4_28 = input.LA(5);
+						if ( ((LA4_28 >= 'A' && LA4_28 <= 'Z')||(LA4_28 >= 'a' && LA4_28 <= 'z')) ) {
+							alt4=16;
 						}
 
 						else {
-							alt8=8;
+							alt4=8;
 						}
 
 					}
 
 					else {
-						alt8=16;
+						alt4=16;
 					}
 
 				}
 
 				else {
-					alt8=16;
+					alt4=16;
 				}
 
 			}
 
 			else {
-				alt8=16;
+				alt4=16;
 			}
 
 			}
 			break;
 		case 'e':
 			{
-			int LA8_9 = input.LA(2);
-			if ( (LA8_9=='l') ) {
-				int LA8_22 = input.LA(3);
-				if ( (LA8_22=='s') ) {
-					int LA8_27 = input.LA(4);
-					if ( (LA8_27=='e') ) {
-						int LA8_31 = input.LA(5);
-						if ( ((LA8_31 >= 'A' && LA8_31 <= 'Z')||(LA8_31 >= 'a' && LA8_31 <= 'z')) ) {
-							alt8=16;
+			int LA4_9 = input.LA(2);
+			if ( (LA4_9=='l') ) {
+				int LA4_20 = input.LA(3);
+				if ( (LA4_20=='s') ) {
+					int LA4_25 = input.LA(4);
+					if ( (LA4_25=='e') ) {
+						int LA4_29 = input.LA(5);
+						if ( ((LA4_29 >= 'A' && LA4_29 <= 'Z')||(LA4_29 >= 'a' && LA4_29 <= 'z')) ) {
+							alt4=16;
 						}
 
 						else {
-							alt8=9;
+							alt4=9;
 						}
 
 					}
 
 					else {
-						alt8=16;
+						alt4=16;
 					}
 
 				}
 
 				else {
-					alt8=16;
+					alt4=16;
 				}
 
 			}
 
 			else {
-				alt8=16;
+				alt4=16;
 			}
 
 			}
 			break;
 		case 'w':
 			{
-			int LA8_10 = input.LA(2);
-			if ( (LA8_10=='h') ) {
-				int LA8_23 = input.LA(3);
-				if ( (LA8_23=='i') ) {
-					int LA8_28 = input.LA(4);
-					if ( (LA8_28=='l') ) {
-						int LA8_32 = input.LA(5);
-						if ( (LA8_32=='e') ) {
-							int LA8_35 = input.LA(6);
-							if ( ((LA8_35 >= 'A' && LA8_35 <= 'Z')||(LA8_35 >= 'a' && LA8_35 <= 'z')) ) {
-								alt8=16;
+			int LA4_10 = input.LA(2);
+			if ( (LA4_10=='h') ) {
+				int LA4_21 = input.LA(3);
+				if ( (LA4_21=='i') ) {
+					int LA4_26 = input.LA(4);
+					if ( (LA4_26=='l') ) {
+						int LA4_30 = input.LA(5);
+						if ( (LA4_30=='e') ) {
+							int LA4_33 = input.LA(6);
+							if ( ((LA4_33 >= 'A' && LA4_33 <= 'Z')||(LA4_33 >= 'a' && LA4_33 <= 'z')) ) {
+								alt4=16;
 							}
 
 							else {
-								alt8=10;
+								alt4=10;
 							}
 
 						}
 
 						else {
-							alt8=16;
+							alt4=16;
 						}
 
 					}
 
 					else {
-						alt8=16;
+						alt4=16;
 					}
 
 				}
 
 				else {
-					alt8=16;
+					alt4=16;
 				}
 
 			}
 
 			else {
-				alt8=16;
+				alt4=16;
 			}
 
 			}
 			break;
 		case 'd':
 			{
-			int LA8_11 = input.LA(2);
-			if ( (LA8_11=='o') ) {
-				int LA8_24 = input.LA(3);
-				if ( ((LA8_24 >= 'A' && LA8_24 <= 'Z')||(LA8_24 >= 'a' && LA8_24 <= 'z')) ) {
-					alt8=16;
+			int LA4_11 = input.LA(2);
+			if ( (LA4_11=='o') ) {
+				int LA4_22 = input.LA(3);
+				if ( ((LA4_22 >= 'A' && LA4_22 <= 'Z')||(LA4_22 >= 'a' && LA4_22 <= 'z')) ) {
+					alt4=16;
 				}
 
 				else {
-					alt8=11;
+					alt4=11;
 				}
 
 			}
 
 			else {
-				alt8=16;
+				alt4=16;
 			}
 
 			}
@@ -893,17 +739,17 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		case '=':
 		case '>':
 			{
-			alt8=12;
+			alt4=12;
 			}
 			break;
 		case ':':
 			{
-			alt8=13;
+			alt4=13;
 			}
 			break;
 		case ';':
 			{
-			alt8=14;
+			alt4=14;
 			}
 			break;
 		case '0':
@@ -917,7 +763,7 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		case '8':
 		case '9':
 			{
-			alt8=15;
+			alt4=15;
 			}
 			break;
 		case 'A':
@@ -968,7 +814,7 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		case 'y':
 		case 'z':
 			{
-			alt8=16;
+			alt4=16;
 			}
 			break;
 		case '\t':
@@ -976,54 +822,54 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 		case '\r':
 		case ' ':
 			{
-			alt8=17;
+			alt4=17;
 			}
 			break;
 		default:
 			NoViableAltException nvae =
-				new NoViableAltException("", 8, 0, input);
+				new NoViableAltException("", 4, 0, input);
 			throw nvae;
 		}
-		switch (alt8) {
+		switch (alt4) {
 			case 1 :
-				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:10: T__16
+				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:10: T__15
+				{
+				mT__15(); 
+
+				}
+				break;
+			case 2 :
+				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:16: T__16
 				{
 				mT__16(); 
 
 				}
 				break;
-			case 2 :
-				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:16: T__17
+			case 3 :
+				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:22: T__17
 				{
 				mT__17(); 
 
 				}
 				break;
-			case 3 :
-				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:22: T__18
+			case 4 :
+				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:28: T__18
 				{
 				mT__18(); 
 
 				}
 				break;
-			case 4 :
-				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:28: T__19
+			case 5 :
+				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:34: T__19
 				{
 				mT__19(); 
 
 				}
 				break;
-			case 5 :
-				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:34: T__20
+			case 6 :
+				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:40: T__20
 				{
 				mT__20(); 
-
-				}
-				break;
-			case 6 :
-				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:40: T__21
-				{
-				mT__21(); 
 
 				}
 				break;
@@ -1101,13 +947,6 @@ public class AnalisadorSintaticoSemanticoLexer extends Lexer {
 				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:116: WS
 				{
 				mWS(); 
-
-				}
-				break;
-			case 18 :
-				// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:1:119: COMMENT
-				{
-				mCOMMENT(); 
 
 				}
 				break;

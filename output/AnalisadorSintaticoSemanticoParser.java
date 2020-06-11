@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g 2020-06-11 04:42:04
+// $ANTLR 3.5.1 D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g 2020-06-11 04:48:22
 
 	import java.util.HashMap;
 	import java.util.Map;
@@ -14,29 +14,28 @@ import java.io.IOException;
 @SuppressWarnings("all")
 public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 	public static final String[] tokenNames = new String[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ASSIGNMENT_OP", "COMMENT", "CONST", 
-		"DO", "ELSE", "IF", "RELATIONAL_OP", "SEMICOLON", "THEN", "VAR", "WHILE", 
-		"WS", "'('", "')'", "'*'", "'+'", "'-'", "'/'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ASSIGNMENT_OP", "CONST", "DO", 
+		"ELSE", "IF", "RELATIONAL_OP", "SEMICOLON", "THEN", "VAR", "WHILE", "WS", 
+		"'('", "')'", "'*'", "'+'", "'-'", "'/'"
 	};
 	public static final int EOF=-1;
+	public static final int T__15=15;
 	public static final int T__16=16;
 	public static final int T__17=17;
 	public static final int T__18=18;
 	public static final int T__19=19;
 	public static final int T__20=20;
-	public static final int T__21=21;
 	public static final int ASSIGNMENT_OP=4;
-	public static final int COMMENT=5;
-	public static final int CONST=6;
-	public static final int DO=7;
-	public static final int ELSE=8;
-	public static final int IF=9;
-	public static final int RELATIONAL_OP=10;
-	public static final int SEMICOLON=11;
-	public static final int THEN=12;
-	public static final int VAR=13;
-	public static final int WHILE=14;
-	public static final int WS=15;
+	public static final int CONST=5;
+	public static final int DO=6;
+	public static final int ELSE=7;
+	public static final int IF=8;
+	public static final int RELATIONAL_OP=9;
+	public static final int SEMICOLON=10;
+	public static final int THEN=11;
+	public static final int VAR=12;
+	public static final int WHILE=13;
+	public static final int WS=14;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -47,8 +46,8 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 
 	public static final String[] ruleNames = new String[] {
-		"invalidRule", "attribution", "condition", "relational_expression", "program", 
-		"aritmetic_expression", "statement", "iteration"
+		"invalidRule", "aritmetic_expression", "attribution", "relational_expression", 
+		"program", "iteration", "statement", "condition"
 	};
 
 	public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -239,22 +238,19 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 					attribution();
 					state._fsp--;
 					dbg.location(25,3);
-					match(input,SEMICOLON,FOLLOW_SEMICOLON_in_statement52); dbg.location(25,13);
-
-								System.out.println("Ponto e virgula");
-							
+					match(input,SEMICOLON,FOLLOW_SEMICOLON_in_statement52); 
 					}
 					break;
 				case 2 :
 					dbg.enterAlt(2);
 
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:28:4: condition
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:26:4: condition
 					{
-					dbg.location(28,4);
-					pushFollow(FOLLOW_condition_in_statement59);
+					dbg.location(26,4);
+					pushFollow(FOLLOW_condition_in_statement57);
 					condition();
 					state._fsp--;
-					dbg.location(28,14);
+					dbg.location(26,14);
 
 								res_ae = 1.0;
 							
@@ -263,10 +259,10 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 				case 3 :
 					dbg.enterAlt(3);
 
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:31:5: iteration
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:29:5: iteration
 					{
-					dbg.location(31,5);
-					pushFollow(FOLLOW_iteration_in_statement67);
+					dbg.location(29,5);
+					pushFollow(FOLLOW_iteration_in_statement65);
 					iteration();
 					state._fsp--;
 
@@ -282,7 +278,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(32, 1);
+		dbg.location(30, 1);
 
 		}
 		finally {
@@ -297,7 +293,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 
 	// $ANTLR start "attribution"
-	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:34:1: attribution returns [ double v ] : VAR ASSIGNMENT_OP e= aritmetic_expression ;
+	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:32:1: attribution returns [ double v ] : VAR ASSIGNMENT_OP e= aritmetic_expression ;
 	public final double attribution() throws RecognitionException {
 		double v = 0.0;
 
@@ -308,34 +304,30 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "attribution");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(34, 0);
+		dbg.location(32, 0);
 
 		try {
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:35:2: ( VAR ASSIGNMENT_OP e= aritmetic_expression )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:33:2: ( VAR ASSIGNMENT_OP e= aritmetic_expression )
 			dbg.enterAlt(1);
 
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:35:4: VAR ASSIGNMENT_OP e= aritmetic_expression
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:33:4: VAR ASSIGNMENT_OP e= aritmetic_expression
 			{
-			dbg.location(35,4);
-			VAR1=(Token)match(input,VAR,FOLLOW_VAR_in_attribution83); dbg.location(35,8);
+			dbg.location(33,4);
+			VAR1=(Token)match(input,VAR,FOLLOW_VAR_in_attribution80); dbg.location(33,8);
 
 					simbol = (VAR1!=null?VAR1.getText():null);
-					System.out.println("Variavel " + simbol);
-				dbg.location(39,2);
-			match(input,ASSIGNMENT_OP,FOLLOW_ASSIGNMENT_OP_in_attribution89); dbg.location(40,2);
-
-					System.out.println("Operador de atribuicao :=");
-				dbg.location(43,4);
-			pushFollow(FOLLOW_aritmetic_expression_in_attribution99);
+				dbg.location(36,2);
+			match(input,ASSIGNMENT_OP,FOLLOW_ASSIGNMENT_OP_in_attribution86); dbg.location(37,4);
+			pushFollow(FOLLOW_aritmetic_expression_in_attribution93);
 			e=aritmetic_expression();
 			state._fsp--;
-			dbg.location(43,27);
+			dbg.location(37,27);
 
 					v = e; 
 					if(res_ae == 1) { 
-						System.out.println("Resultado: " + simbol + " = "  + v); 
+						System.out.println(simbol + " = "  + v); 
 						vars.put(simbol, v);
-						System.out.println(vars.toString());
+						//System.out.println(vars.toString());
 					}
 				
 			}
@@ -348,7 +340,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(51, 0);
+		dbg.location(45, 0);
 
 		}
 		finally {
@@ -364,7 +356,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 
 	// $ANTLR start "aritmetic_expression"
-	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:53:1: aritmetic_expression returns [ double v ] : ( ( CONST | VAR ) ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )? | '(' e= aritmetic_expression ')' );
+	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:47:1: aritmetic_expression returns [ double v ] : ( ( CONST | VAR ) ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )? | '(' e= aritmetic_expression ')' );
 	public final double aritmetic_expression() throws RecognitionException {
 		double v = 0.0;
 
@@ -376,10 +368,10 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "aritmetic_expression");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(53, 0);
+		dbg.location(47, 0);
 
 		try {
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:54:2: ( ( CONST | VAR ) ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )? | '(' e= aritmetic_expression ')' )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:48:2: ( ( CONST | VAR ) ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )? | '(' e= aritmetic_expression ')' )
 			int alt5=2;
 			try { dbg.enterDecision(5, decisionCanBacktrack[5]);
 
@@ -387,7 +379,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 			if ( (LA5_0==CONST||LA5_0==VAR) ) {
 				alt5=1;
 			}
-			else if ( (LA5_0==16) ) {
+			else if ( (LA5_0==15) ) {
 				alt5=2;
 			}
 
@@ -404,10 +396,10 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:54:4: ( CONST | VAR ) ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )?
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:48:4: ( CONST | VAR ) ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )?
 					{
-					dbg.location(54,4);
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:54:4: ( CONST | VAR )
+					dbg.location(48,4);
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:48:4: ( CONST | VAR )
 					int alt3=2;
 					try { dbg.enterSubRule(3);
 					try { dbg.enterDecision(3, decisionCanBacktrack[3]);
@@ -433,31 +425,29 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:55:3: CONST
+							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:49:3: CONST
 							{
-							dbg.location(55,3);
-							CONST2=(Token)match(input,CONST,FOLLOW_CONST_in_aritmetic_expression119); dbg.location(55,9);
+							dbg.location(49,3);
+							CONST2=(Token)match(input,CONST,FOLLOW_CONST_in_aritmetic_expression113); dbg.location(49,9);
 
 										v = Double.parseDouble((CONST2!=null?CONST2.getText():null));
-										System.out.println("Constante " + v);
 									
 							}
 							break;
 						case 2 :
 							dbg.enterAlt(2);
 
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:59:5: VAR
+							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:52:5: VAR
 							{
-							dbg.location(59,5);
-							VAR3=(Token)match(input,VAR,FOLLOW_VAR_in_aritmetic_expression128); dbg.location(59,9);
+							dbg.location(52,5);
+							VAR3=(Token)match(input,VAR,FOLLOW_VAR_in_aritmetic_expression122); dbg.location(52,9);
 
 										simbolTemp = (VAR3!=null?VAR3.getText():null);
 										
 										if(vars.get(simbolTemp) != null) {
 											v = vars.get(simbolTemp);
-											System.out.println("Variavel " + simbolTemp + " EXISTE com valor: " + v);
 										} else {
-											System.out.println("ERRO: Variavel " + simbolTemp + " NÃO EXISTE com valor: " + v);
+											System.out.println("ERRO: Variavel " + simbolTemp + " NÃO EXISTE.");
 										}
 									
 							}
@@ -465,29 +455,29 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(3);}
-					dbg.location(70,2);
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:70:2: ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )?
+					dbg.location(62,2);
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:62:2: ( '*' e= aritmetic_expression | '/' e= aritmetic_expression | '+' e= aritmetic_expression | '-' e= aritmetic_expression )?
 					int alt4=5;
 					try { dbg.enterSubRule(4);
 					try { dbg.enterDecision(4, decisionCanBacktrack[4]);
 
 					switch ( input.LA(1) ) {
-						case 18:
+						case 17:
 							{
 							alt4=1;
 							}
 							break;
-						case 21:
+						case 20:
 							{
 							alt4=2;
 							}
 							break;
-						case 19:
+						case 18:
 							{
 							alt4=3;
 							}
 							break;
-						case 20:
+						case 19:
 							{
 							alt4=4;
 							}
@@ -499,16 +489,15 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:71:3: '*' e= aritmetic_expression
+							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:63:3: '*' e= aritmetic_expression
 							{
-							dbg.location(71,3);
-							match(input,18,FOLLOW_18_in_aritmetic_expression140); dbg.location(71,9);
-							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression146);
+							dbg.location(63,3);
+							match(input,17,FOLLOW_17_in_aritmetic_expression134); dbg.location(63,9);
+							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression140);
 							e=aritmetic_expression();
 							state._fsp--;
-							dbg.location(71,32);
+							dbg.location(63,32);
 
-										System.out.println("Operador * V: " + v + " -- e.v = " + e);
 										v *= e;
 									
 							}
@@ -516,17 +505,15 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:75:4: '/' e= aritmetic_expression
+							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:66:4: '/' e= aritmetic_expression
 							{
-							dbg.location(75,4);
-							match(input,21,FOLLOW_21_in_aritmetic_expression153); dbg.location(75,10);
-							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression159);
+							dbg.location(66,4);
+							match(input,20,FOLLOW_20_in_aritmetic_expression147); dbg.location(66,10);
+							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression153);
 							e=aritmetic_expression();
 							state._fsp--;
-							dbg.location(75,33);
+							dbg.location(66,33);
 
-										System.out.println("Operador / V: " + v + " -- e.v = " + e);
-										
 										if(e == 0) {
 											System.out.println("ERRO: Divisão por 0.");
 										} else {
@@ -538,16 +525,15 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 						case 3 :
 							dbg.enterAlt(3);
 
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:84:4: '+' e= aritmetic_expression
+							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:73:4: '+' e= aritmetic_expression
 							{
-							dbg.location(84,4);
-							match(input,19,FOLLOW_19_in_aritmetic_expression166); dbg.location(84,10);
-							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression172);
+							dbg.location(73,4);
+							match(input,18,FOLLOW_18_in_aritmetic_expression160); dbg.location(73,10);
+							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression166);
 							e=aritmetic_expression();
 							state._fsp--;
-							dbg.location(84,33);
+							dbg.location(73,33);
 
-										System.out.println("Operador + V: " + v + " -- e.v = " + e);
 										v += e;
 									
 							}
@@ -555,16 +541,15 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 						case 4 :
 							dbg.enterAlt(4);
 
-							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:88:4: '-' e= aritmetic_expression
+							// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:76:4: '-' e= aritmetic_expression
 							{
-							dbg.location(88,4);
-							match(input,20,FOLLOW_20_in_aritmetic_expression179); dbg.location(88,10);
-							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression185);
+							dbg.location(76,4);
+							match(input,19,FOLLOW_19_in_aritmetic_expression173); dbg.location(76,10);
+							pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression179);
 							e=aritmetic_expression();
 							state._fsp--;
-							dbg.location(88,33);
+							dbg.location(76,33);
 
-										System.out.println("Operador - V: " + v + " -- e.v = " + e);
 										v -= e;
 									
 							}
@@ -578,16 +563,16 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:93:4: '(' e= aritmetic_expression ')'
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:80:4: '(' e= aritmetic_expression ')'
 					{
-					dbg.location(93,4);
-					match(input,16,FOLLOW_16_in_aritmetic_expression196); dbg.location(93,10);
-					pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression202);
+					dbg.location(80,4);
+					match(input,15,FOLLOW_15_in_aritmetic_expression190); dbg.location(80,10);
+					pushFollow(FOLLOW_aritmetic_expression_in_aritmetic_expression196);
 					e=aritmetic_expression();
 					state._fsp--;
-					dbg.location(93,33);
-					v = e;dbg.location(93,46);
-					match(input,17,FOLLOW_17_in_aritmetic_expression206); 
+					dbg.location(80,33);
+					v = e;dbg.location(80,46);
+					match(input,16,FOLLOW_16_in_aritmetic_expression200); 
 					}
 					break;
 
@@ -600,7 +585,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(94, 1);
+		dbg.location(81, 1);
 
 		}
 		finally {
@@ -616,52 +601,43 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 
 	// $ANTLR start "condition"
-	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:96:1: condition : IF e= relational_expression THEN program ( ELSE program )? ;
+	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:83:1: condition : IF e= relational_expression THEN program ( ELSE program )? ;
 	public final void condition() throws RecognitionException {
 		double e =0.0;
 
 		try { dbg.enterRule(getGrammarFileName(), "condition");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(96, 0);
+		dbg.location(83, 0);
 
 		try {
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:97:2: ( IF e= relational_expression THEN program ( ELSE program )? )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:84:2: ( IF e= relational_expression THEN program ( ELSE program )? )
 			dbg.enterAlt(1);
 
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:97:4: IF e= relational_expression THEN program ( ELSE program )?
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:84:4: IF e= relational_expression THEN program ( ELSE program )?
 			{
-			dbg.location(97,4);
-			match(input,IF,FOLLOW_IF_in_condition217); dbg.location(97,7);
-
-					System.out.println("Comando if");
-				dbg.location(100,4);
-			pushFollow(FOLLOW_relational_expression_in_condition227);
+			dbg.location(84,4);
+			match(input,IF,FOLLOW_IF_in_condition211); dbg.location(85,4);
+			pushFollow(FOLLOW_relational_expression_in_condition218);
 			e=relational_expression();
 			state._fsp--;
-			dbg.location(100,28);
+			dbg.location(85,28);
 
 					res_ae = e;
-					System.out.println("RE = " + res_ae);
-				dbg.location(104,2);
-			match(input,THEN,FOLLOW_THEN_in_condition232); dbg.location(104,7);
-
-					System.out.println("Comando THEN");
-				dbg.location(107,2);
-			pushFollow(FOLLOW_program_in_condition237);
+				dbg.location(88,2);
+			match(input,THEN,FOLLOW_THEN_in_condition223); dbg.location(89,2);
+			pushFollow(FOLLOW_program_in_condition227);
 			program();
 			state._fsp--;
-			dbg.location(107,10);
+			dbg.location(89,10);
 
-					System.out.println("res_aeANT = " + res_ae);	
 					if(res_ae == 1) {
 						res_ae = 0.0;
 					} else {
 						res_ae = 1.0;
-					}		
-					System.out.println("res_aeDEP = " + res_ae);	
-				dbg.location(116,2);
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:116:2: ( ELSE program )?
+					}
+				dbg.location(96,2);
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:96:2: ( ELSE program )?
 			int alt6=2;
 			try { dbg.enterSubRule(6);
 			try { dbg.enterDecision(6, decisionCanBacktrack[6]);
@@ -676,14 +652,11 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:117:3: ELSE program
+					// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:97:3: ELSE program
 					{
-					dbg.location(117,3);
-					match(input,ELSE,FOLLOW_ELSE_in_condition246); dbg.location(117,8);
-
-								System.out.println("Comando ELSE");
-							dbg.location(120,3);
-					pushFollow(FOLLOW_program_in_condition253);
+					dbg.location(97,3);
+					match(input,ELSE,FOLLOW_ELSE_in_condition237); dbg.location(98,3);
+					pushFollow(FOLLOW_program_in_condition241);
 					program();
 					state._fsp--;
 
@@ -692,7 +665,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 			}
 			} finally {dbg.exitSubRule(6);}
-			dbg.location(121,5);
+			dbg.location(99,5);
 
 					res_ae = 1.0;
 				
@@ -706,7 +679,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(124, 0);
+		dbg.location(102, 0);
 
 		}
 		finally {
@@ -721,41 +694,35 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 
 	// $ANTLR start "iteration"
-	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:126:1: iteration : WHILE e= relational_expression DO program ;
+	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:104:1: iteration : WHILE e= relational_expression DO program ;
 	public final void iteration() throws RecognitionException {
 		double e =0.0;
 
 		try { dbg.enterRule(getGrammarFileName(), "iteration");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(126, 0);
+		dbg.location(104, 0);
 
 		try {
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:127:2: ( WHILE e= relational_expression DO program )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:105:2: ( WHILE e= relational_expression DO program )
 			dbg.enterAlt(1);
 
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:127:4: WHILE e= relational_expression DO program
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:105:4: WHILE e= relational_expression DO program
 			{
-			dbg.location(127,4);
-			match(input,WHILE,FOLLOW_WHILE_in_iteration270); dbg.location(127,10);
-
-					System.out.println("Comando WHILE");
-				dbg.location(130,4);
-			pushFollow(FOLLOW_relational_expression_in_iteration279);
+			dbg.location(105,4);
+			match(input,WHILE,FOLLOW_WHILE_in_iteration257); dbg.location(106,4);
+			pushFollow(FOLLOW_relational_expression_in_iteration265);
 			e=relational_expression();
 			state._fsp--;
-			dbg.location(130,28);
+			dbg.location(106,28);
 
 					res_ae = e;
-				dbg.location(133,2);
-			match(input,DO,FOLLOW_DO_in_iteration284); dbg.location(133,5);
-
-					System.out.println("Comando DO");
-				dbg.location(136,2);
-			pushFollow(FOLLOW_program_in_iteration289);
+				dbg.location(109,2);
+			match(input,DO,FOLLOW_DO_in_iteration270); dbg.location(110,2);
+			pushFollow(FOLLOW_program_in_iteration274);
 			program();
 			state._fsp--;
-			dbg.location(136,10);
+			dbg.location(110,10);
 
 					res_ae = 1.0;
 				
@@ -769,7 +736,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(139, 0);
+		dbg.location(113, 0);
 
 		}
 		finally {
@@ -784,65 +751,51 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 
 	// $ANTLR start "relational_expression"
-	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:141:1: relational_expression returns [ double v ] : e= aritmetic_expression RELATIONAL_OP e= aritmetic_expression ;
+	// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:115:1: relational_expression returns [ double v ] : e= aritmetic_expression RELATIONAL_OP e= aritmetic_expression ;
 	public final double relational_expression() throws RecognitionException {
 		double v = 0.0;
 
 
-		Token RELATIONAL_OP4=null;
 		double e =0.0;
 
 		try { dbg.enterRule(getGrammarFileName(), "relational_expression");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(141, 0);
+		dbg.location(115, 0);
 
 		try {
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:142:2: (e= aritmetic_expression RELATIONAL_OP e= aritmetic_expression )
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:116:2: (e= aritmetic_expression RELATIONAL_OP e= aritmetic_expression )
 			dbg.enterAlt(1);
 
-			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:143:2: e= aritmetic_expression RELATIONAL_OP e= aritmetic_expression
+			// D:\\Documentos\\code\\analisador-sintatico-semantico\\AnalisadorSintaticoSemantico.g:117:2: e= aritmetic_expression RELATIONAL_OP e= aritmetic_expression
 			{
-			dbg.location(143,4);
-			pushFollow(FOLLOW_aritmetic_expression_in_relational_expression312);
+			dbg.location(117,4);
+			pushFollow(FOLLOW_aritmetic_expression_in_relational_expression296);
 			e=aritmetic_expression();
 			state._fsp--;
-			dbg.location(143,27);
+			dbg.location(117,27);
 
-					v = e; 
-					System.out.println("Resultado: AE1 = "  + v); 
-					res_ae = v;
-				dbg.location(148,2);
-			RELATIONAL_OP4=(Token)match(input,RELATIONAL_OP,FOLLOW_RELATIONAL_OP_in_relational_expression317); dbg.location(148,16);
-
-					rel_op = (RELATIONAL_OP4!=null?RELATIONAL_OP4.getText():null);
-					System.out.println("Operador relacional " + rel_op);
-				dbg.location(152,4);
-			pushFollow(FOLLOW_aritmetic_expression_in_relational_expression326);
+					res_ae = e;
+				dbg.location(120,2);
+			match(input,RELATIONAL_OP,FOLLOW_RELATIONAL_OP_in_relational_expression301); dbg.location(121,4);
+			pushFollow(FOLLOW_aritmetic_expression_in_relational_expression309);
 			e=aritmetic_expression();
 			state._fsp--;
-			dbg.location(152,27);
+			dbg.location(121,27);
 
 					v = e; 
-					System.out.println("Resultado: AE2 = "  + v);
 					
 					if(rel_op.equals("=") && res_ae == v) {
-						System.out.println("Resultado: AE é = ");
 						v = 1;
 					} else if(rel_op.equals("<>") && res_ae != v) {
-						System.out.println("Resultado: AE é <> ");
 						v = 1;
 					} else if(rel_op.equals("<") && res_ae < v) {
-						System.out.println("Resultado: AE é <");
 						v = 1;
 					} else if(rel_op.equals(">") && res_ae > v) {
-						System.out.println("Resultado: AE é >");
 						v = 1;
 					} else if(rel_op.equals("<") && res_ae <= v) {
-						System.out.println("Resultado: AE é <=");
 						v = 1;
 					} else if(rel_op.equals(">=") && res_ae >= v) {
-						System.out.println("Resultado: AE é >=");
 						v = 1;
 					} else {
 						v = 0;
@@ -858,7 +811,7 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(178, 1);
+		dbg.location(140, 1);
 
 		}
 		finally {
@@ -875,38 +828,38 @@ public class AnalisadorSintaticoSemanticoParser extends DebugParser {
 
 
 
-	public static final BitSet FOLLOW_statement_in_program36 = new BitSet(new long[]{0x0000000000006202L});
-	public static final BitSet FOLLOW_attribution_in_statement48 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_statement_in_program36 = new BitSet(new long[]{0x0000000000003102L});
+	public static final BitSet FOLLOW_attribution_in_statement48 = new BitSet(new long[]{0x0000000000000400L});
 	public static final BitSet FOLLOW_SEMICOLON_in_statement52 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_condition_in_statement59 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_iteration_in_statement67 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_VAR_in_attribution83 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ASSIGNMENT_OP_in_attribution89 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_attribution99 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONST_in_aritmetic_expression119 = new BitSet(new long[]{0x00000000003C0002L});
-	public static final BitSet FOLLOW_VAR_in_aritmetic_expression128 = new BitSet(new long[]{0x00000000003C0002L});
-	public static final BitSet FOLLOW_18_in_aritmetic_expression140 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression146 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_21_in_aritmetic_expression153 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression159 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_19_in_aritmetic_expression166 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression172 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_20_in_aritmetic_expression179 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression185 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_16_in_aritmetic_expression196 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression202 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_17_in_aritmetic_expression206 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_IF_in_condition217 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_relational_expression_in_condition227 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_THEN_in_condition232 = new BitSet(new long[]{0x0000000000006200L});
-	public static final BitSet FOLLOW_program_in_condition237 = new BitSet(new long[]{0x0000000000000102L});
-	public static final BitSet FOLLOW_ELSE_in_condition246 = new BitSet(new long[]{0x0000000000006200L});
-	public static final BitSet FOLLOW_program_in_condition253 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_WHILE_in_iteration270 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_relational_expression_in_iteration279 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_DO_in_iteration284 = new BitSet(new long[]{0x0000000000006200L});
-	public static final BitSet FOLLOW_program_in_iteration289 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_relational_expression312 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_RELATIONAL_OP_in_relational_expression317 = new BitSet(new long[]{0x0000000000012040L});
-	public static final BitSet FOLLOW_aritmetic_expression_in_relational_expression326 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_condition_in_statement57 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_iteration_in_statement65 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_VAR_in_attribution80 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ASSIGNMENT_OP_in_attribution86 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_attribution93 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONST_in_aritmetic_expression113 = new BitSet(new long[]{0x00000000001E0002L});
+	public static final BitSet FOLLOW_VAR_in_aritmetic_expression122 = new BitSet(new long[]{0x00000000001E0002L});
+	public static final BitSet FOLLOW_17_in_aritmetic_expression134 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression140 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_20_in_aritmetic_expression147 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression153 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_18_in_aritmetic_expression160 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression166 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_19_in_aritmetic_expression173 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression179 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_15_in_aritmetic_expression190 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_aritmetic_expression196 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_16_in_aritmetic_expression200 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_IF_in_condition211 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_relational_expression_in_condition218 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_THEN_in_condition223 = new BitSet(new long[]{0x0000000000003100L});
+	public static final BitSet FOLLOW_program_in_condition227 = new BitSet(new long[]{0x0000000000000082L});
+	public static final BitSet FOLLOW_ELSE_in_condition237 = new BitSet(new long[]{0x0000000000003100L});
+	public static final BitSet FOLLOW_program_in_condition241 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_WHILE_in_iteration257 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_relational_expression_in_iteration265 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_DO_in_iteration270 = new BitSet(new long[]{0x0000000000003100L});
+	public static final BitSet FOLLOW_program_in_iteration274 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_relational_expression296 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_RELATIONAL_OP_in_relational_expression301 = new BitSet(new long[]{0x0000000000009020L});
+	public static final BitSet FOLLOW_aritmetic_expression_in_relational_expression309 = new BitSet(new long[]{0x0000000000000002L});
 }
