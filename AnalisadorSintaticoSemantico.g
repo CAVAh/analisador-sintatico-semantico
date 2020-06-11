@@ -12,20 +12,22 @@ options {
 @members {
 	Map<String, Double> vars = new HashMap<>();
 	String simbol = "";
+	String simbolTemp = "";	
+	String rel_op = "";	
+	Double res_ae = 1.0;
 }
 
-program	: // ??
-	(
-		statement
-		SEMICOLON {
-			System.out.println("Ponto e virgula");
-		}
-	)+
+program	: statement+
 	;
 
 statement
 	:	attribution
-	|	condition
+		SEMICOLON {
+			System.out.println("Ponto e virgula");
+		}
+	|	condition {
+			res_ae = 1.0;
+		}
 	| 	iteration
 	;
 
@@ -40,41 +42,54 @@ attribution returns [ double v ] // OK
 	}
 	e = aritmetic_expression {
 		$v = $e.v; 
-		System.out.println("Resultado: " + simbol + " = "  + $v); 
-		vars.put(simbol, $v);
-		System.out.println(vars.toString());
+		if(res_ae == 1) { 
+			System.out.println("Resultado: " + simbol + " = "  + $v); 
+			vars.put(simbol, $v);
+			System.out.println(vars.toString());
+		}
 	}
 ;
 
 aritmetic_expression returns [ double v ]
 	: (
 		CONST {
-			$v = Integer.parseInt($CONST.text);
+			$v = Double.parseDouble($CONST.text);
 			System.out.println("Constante " + $v);
 		} 
 		| VAR {
-			simbol = $VAR.text;
-			System.out.println("Variavel " + simbol);
+			simbolTemp = $VAR.text;
+			
+			if(vars.get(simbolTemp) != null) {
+				$v = vars.get(simbolTemp);
+				System.out.println("Variavel " + simbolTemp + " EXISTE com valor: " + $v);
+			} else {
+				System.out.println("ERRO: Variavel " + simbolTemp + " NÃO EXISTE com valor: " + $v);
+			}
 		}
 	)
 	(
 		'*' e = aritmetic_expression {
-			System.out.println("Operador *");		
+			System.out.println("Operador * V: " + $v + " -- e.v = " + $e.v);
 			$v *= $e.v;
 		}
 		|'/' e = aritmetic_expression {
-			System.out.println("Operador /");
-			$v /= $e.v;
+			System.out.println("Operador / V: " + $v + " -- e.v = " + $e.v);
+			
+			if($e.v == 0) {
+				System.out.println("ERRO: Divisão por 0.");
+			} else {
+				$v /= $e.v;
+			}
 		}
 		|'+' e = aritmetic_expression {
-			System.out.println("Operador +");
+			System.out.println("Operador + V: " + $v + " -- e.v = " + $e.v);
 			$v += $e.v;
 		}
 		|'-' e = aritmetic_expression {
-			System.out.println("Operador -");
+			System.out.println("Operador - V: " + $v + " -- e.v = " + $e.v);
 			$v -= $e.v;
 		}
-	)?	
+	)?
 	|	'(' e = aritmetic_expression {$v = $e.v;} ')'
 	;
 
@@ -82,78 +97,85 @@ condition
 	: IF {
 		System.out.println("Comando if");
 	} 
-	relational_expression 
+	e = relational_expression {
+		res_ae = $e.v;
+		System.out.println("RE = " + res_ae);
+	}
 	THEN {
 		System.out.println("Comando THEN");
-	} 
-	(
-		statement
-		SEMICOLON
-	)+
+	}
+	program {
+		System.out.println("res_aeANT = " + res_ae);	
+		if(res_ae == 1) {
+			res_ae = 0.0;
+		} else {
+			res_ae = 1.0;
+		}		
+		System.out.println("res_aeDEP = " + res_ae);	
+	}
 	(
 		ELSE {
 			System.out.println("Comando ELSE");
 		} 
-		(
-			statement
-			SEMICOLON
-		)+
-	)?
+		program
+	)? {
+		res_ae = 1.0;
+	}
 ;
 
 iteration // OK
 	: WHILE {
 		System.out.println("Comando WHILE");
 	}
-	relational_expression 
+	e = relational_expression {
+		res_ae = $e.v;
+	}
 	DO {
 		System.out.println("Comando DO");
 	}
-	(
-		statement {
-			System.out.println("Statement");
-		}
-		SEMICOLON {
-			System.out.println("Ponto e virgula 2");
-		}
-	)+
-;
-
-relational_expression // OK
-	: 
-	aritmetic_expression
-	RELATIONAL_OP {
-		System.out.println("Operador relacional " + $RELATIONAL_OP.text);
+	program {
+		res_ae = 1.0;
 	}
-	aritmetic_expression
 ;
 
-/*expr returns [ double v ]:
-	INT {
-		$v = Double.parseDouble( $INT.text);
-	} 
-	(
-		  '+' e = expr {$v += $e.v;} 
-		| '-' e = expr {$v -= $e.v;} 
-		| '*' e = expr {$v *= $e.v;} 
-		| '/' e = expr {$v /= $e.v;}
-	)	
-	|	INT {$v = Double.parseDouble( $INT.text);}
-    
-
-    |	'(' e = expr {$v = $e.v;} ')'
-    ;
-
-    | VAR {simb = $VAR.text; System.out.println("Variavel " + simb + " detectada");} 
-    ('*'{System.out.println("Operador * detectado");}|'/'{System.out.println("Operador / detectado");}) aritmetic_expression
-    | VAR {simb = $VAR.text; System.out.println("Variavel " + simb + " detectada");} 
-    ('+'{System.out.println("Operador + detectado");}|'-'{System.out.println("Operador - detectado");}) aritmetic_expression
-    | VAR {simb = $VAR.text; System.out.println("Variavel " + simb + " detectada");}                  
-    | CONST {valor = Integer.parseInt( $CONST.text);System.out.println("Constante " + valor + " detectada");}                  
-    | '(' {System.out.println("Símbolo ( detectado");}aritmetic_expression ')'{System.out.println("Símbolo ) detectado");}
-        
-    ;*/
-
+relational_expression returns [ double v ] // OK
+	: 
+	e = aritmetic_expression {
+		$v = $e.v; 
+		System.out.println("Resultado: AE1 = "  + $v); 
+		res_ae = $v;
+	}
+	RELATIONAL_OP {
+		rel_op = $RELATIONAL_OP.text;
+		System.out.println("Operador relacional " + rel_op);
+	}
+	e = aritmetic_expression {
+		$v = $e.v; 
+		System.out.println("Resultado: AE2 = "  + $v);
+		
+		if(rel_op.equals("=") && res_ae == $v) {
+			System.out.println("Resultado: AE é = ");
+			$v = 1;
+		} else if(rel_op.equals("<>") && res_ae != $v) {
+			System.out.println("Resultado: AE é <> ");
+			$v = 1;
+		} else if(rel_op.equals("<") && res_ae < $v) {
+			System.out.println("Resultado: AE é <");
+			$v = 1;
+		} else if(rel_op.equals(">") && res_ae > $v) {
+			System.out.println("Resultado: AE é >");
+			$v = 1;
+		} else if(rel_op.equals("<") && res_ae <= $v) {
+			System.out.println("Resultado: AE é <=");
+			$v = 1;
+		} else if(rel_op.equals(">=") && res_ae >= $v) {
+			System.out.println("Resultado: AE é >=");
+			$v = 1;
+		} else {
+			$v = 0;
+		}		
+	}
+	;
 
 IF	: 'if'
 	;
