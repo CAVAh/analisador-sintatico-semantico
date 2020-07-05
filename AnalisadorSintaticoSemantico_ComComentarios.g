@@ -1,4 +1,4 @@
-grammar AnalisadorSintaticoSemantico;
+grammar AnalisadorSintaticoSemantico_ComComentarios;
 
 options {
     language=Java;
